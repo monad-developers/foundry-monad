@@ -7,7 +7,7 @@
 
 <h4 align="center">
   <a href="https://docs.monad.xyz">Monad Documentation</a> | <a href="https://book.getfoundry.sh/">Foundry Documentation</a> | 
-   <a href="https://github.com/monad-devrel/foundry-monad/issues">Report Issue</a>
+   <a href="https://github.com/monad-developers/foundry-monad/issues">Report Issue</a>
 </h4>
 
 _Foundry-Monad is a Foundry template with Monad configuration. So developers don't have to do the initial configuration in Foundry for Monad network._
