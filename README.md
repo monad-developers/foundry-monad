@@ -1,7 +1,7 @@
 ## Foundry-Monad
 
 > [!NOTE]  
-> In this foundry template the default chain is `monadDevnet`, if you wish to change it change the network in `foundry.toml`
+> In this foundry template the default chain is `monadDevnet`, if you wish to change it, change the network in `foundry.toml`
 
 <!-- TODO: Add Image -->
 
