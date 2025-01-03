@@ -1,7 +1,7 @@
 ## Foundry-Monad
 
 > [!NOTE]  
-> In this foundry template the default chain is `monadDevnet`, if you wish to change it change the network in `foundry.toml`
+> In this foundry template the default chain is `monadDevnet`, if you wish to change it, change the network in `foundry.toml`
 
 <!-- TODO: Add Image -->
 
@@ -19,7 +19,7 @@ Foundry consists of:
 -   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
 -   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
 -   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+-   **Chisel**: Fast, utilitarian, and verbose Solidity REPL.
 
 ## Requirements
 
