@@ -5,12 +5,12 @@ libs = ["lib"]
 
 # Monad Configuration
 # TODO: Add RPC URL and Chain ID
-eth-rpc-url="MONAD_RPC_URL"
-chain_id = "MONAD_CHAIN_ID"
+eth-rpc-url="${MONAD_RPC_URL}"
+chain_id = "${MONAD_CHAIN_ID}"
 
 
 # TODO: Add Explorer URL and Chain ID
 [etherscan]
-monadDevnet = { key = "DUMMY_VALUE", url = "EXPLORER_URL", chain = MONAD_CHAIN_ID }
+monadDevnet = { key = "${ETHERSCAN_API_KEY}", url = "${EXPLORER_URL}", chain = "${MONAD_CHAIN_ID}" }
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
