@@ -1,120 +1,111 @@
 ## Foundry-Monad
 
 > [!NOTE]  
-> In this foundry template the default chain is `monadDevnet`, if you wish to change it change the network in `foundry.toml`
-
+> In this Foundry template, the default chain is `monadDevnet`. If you wish to use a different network, modify the settings in `foundry.toml`
 <!-- TODO: Add Image -->
 
 <h4 align="center">
-  <a href="https://docs.monad.xyz">Monad Documentation</a> | <a href="https://book.getfoundry.sh/">Foundry Documentation</a> | 
-   <a href="https://github.com/monad-developers/foundry-monad/issues">Report Issue</a>
+  <a href="https://docs.monad.xyz">Monad Documentation</a> | 
+  <a href="https://book.getfoundry.sh/">Foundry Documentation</a> | 
+  <a href="https://github.com/monad-developers/foundry-monad/issues">Report Issue</a>
 </h4>
 
-_Foundry-Monad is a Foundry template with Monad configuration. So developers don't have to do the initial configuration in Foundry for Monad network._
+## 📝 Description
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Foundry-Monad is a pre-configured Foundry template for the Monad network. This template enables developers to quickly start development without the need to perform initial Foundry setup for the Monad network.
 
-Foundry consists of:
+### What is Foundry?
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Foundry is a high-performance, portable, and modular toolkit for Ethereum application development written in Rust.
 
-## Requirements
+Core Components:
 
-Before you begin, you need to install the following tools:
+-   **Forge**: Ethereum smart contract testing framework
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts
+-   **Anvil**: Local Ethereum node for development
+-   **Chisel**: Fast and feature-rich Solidity REPL
 
--   Rust
--   Cargo
+## 🛠 Requirements
+
+Before you begin, ensure you have the following installed:
+
+-   [Rust](https://www.rust-lang.org/tools/install)
+-   [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 -   [Foundryup](https://book.getfoundry.sh/getting-started/installation)
 
-## Quickstart
+## 🚀 Quick Start
 
-To get started, follow the steps below:
-
-1. You can either clone this repo using the below command:
+### Option 1: Clone the Repository
 
 ```sh
 git clone https://github.com/monad-developers/foundry-monad
+cd foundry-monad
+forge install
 ```
 
-or
-
-You can do it manually using the below set of commands:
+### Option 2: Create Project from Template
 
 ```sh
-mkdir [project_name] && cd [project_name] && forge init --template monad-developers/foundry-monad
+mkdir [project_name] && cd [project_name]
+forge init --template monad-developers/foundry-monad
 ```
 
-The foundry project is now ready to be used!
+## 💻 Core Commands
 
-## Examples
-
-### Compile
-
+### Compilation
 ```shell
 forge compile
 ```
 
 ### Build
-
 ```shell
 forge build
 ```
 
-### Test
-
+### Testing
 ```shell
 forge test
 ```
 
-### Deploy
-
+### Deploy Contract
 ```shell
 forge create --private-key <your_private_key> src/Counter.sol:Counter
 ```
 
 ### Verify Contract
-
 ```shell
 forge verify-contract <contract_address> src/Counter.sol:Counter
 ```
 
-### Format
-
+### Format Code
 ```shell
 forge fmt
 ```
 
-### Gas Snapshots
-
+### Gas Analysis
 ```shell
 forge snapshot
 ```
 
-### Anvil
-
+### Run Local Node
 ```shell
 anvil
 ```
 
-### Cast
+## 🤝 How to Contribute
 
-```shell
-cast <subcommand>
-```
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to your fork (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### Help
+## 📚 Additional Resources
 
-```shell
-forge --help
-```
+- [Official Monad Website](https://monad.xyz)
+- [Foundry Documentation](https://book.getfoundry.sh/)
+- [Monad Community Chat](https://t.me/monad_xyz)
 
-```shell
-anvil --help
-```
+## 📄 License
 
-```shell
-cast --help
-```
+Distributed under the MIT License. See `LICENSE` file for more information.
