@@ -25,7 +25,8 @@ Foundry consists of:
 
 Before you begin, you need to install the following tools:
 
--   Rust
+-   
+[Rust](https://www.rust-lang.org/tools/install)
 -   Cargo
 -   [Foundryup](https://book.getfoundry.sh/getting-started/installation)
 
