@@ -1,14 +1,4 @@
-## Foundry-Monad
-
-> [!NOTE]  
-> In this foundry template the default chain is `monadTestnet`, if you wish to change it change the network in `foundry.toml`
-
-<h4 align="center">
-  <a href="https://docs.monad.xyz">Monad Documentation</a> | <a href="https://book.getfoundry.sh/">Foundry Documentation</a> | 
-   <a href="https://github.com/monad-developers/foundry-monad/issues">Report Issue</a>
-</h4>
-
-_Foundry-Monad is a Foundry template with Monad configuration. So developers don't have to do the initial configuration in Foundry for Monad network._
+## Monad flavored Foundry
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
@@ -19,41 +9,11 @@ Foundry consists of:
 -   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
 -   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
-## Requirements
+## Documentation
 
-Before you begin, you need to install the following tools:
+https://book.getfoundry.sh/
 
--   Rust
--   Cargo
--   [Foundryup](https://book.getfoundry.sh/getting-started/installation)
-
-## Quickstart
-
-To get started, follow the steps below:
-
-1. You can either clone this repo using the below command:
-
-```sh
-git clone https://github.com/monad-developers/foundry-monad
-```
-
-or
-
-You can do it manually using the below set of commands:
-
-```sh
-mkdir [project_name] && cd [project_name] && forge init --template monad-developers/foundry-monad
-```
-
-The foundry project is now ready to be used!
-
-## Examples
-
-### Compile
-
-```shell
-forge compile
-```
+## Usage
 
 ### Build
 
@@ -65,23 +25,6 @@ forge build
 
 ```shell
 forge test
-```
-
-### Deploy
-
-```shell
-forge create --private-key <your_private_key> src/Counter.sol:Counter
-```
-
-### Verify Contract
-
-```shell
-forge verify-contract \
-  <contract_address> \
-  src/Counter.sol:Counter \
-  --verify \
-  --verifier sourcify \
-  --verifier-url https://sourcify-api-monad.blockvision.org
 ```
 
 ### Format
@@ -102,6 +45,34 @@ forge snapshot
 anvil
 ```
 
+### Deploy to Monad Testnet
+
+First, you need to create a keystore file. Do not forget to remember the password! You will need it to deploy your contract.
+
+```shell
+cast wallet import monad-deployer --private-key $(cast wallet new | grep 'Private key:' | awk '{print $3}')
+```
+
+After creating the keystore, you can read its address using:
+
+```shell
+cast wallet address --account monad-deployer
+```
+
+The command above will create a keystore file named `monad-deployer` in the ~/.foundry/keystores directory.
+
+Then, you can deploy your contract to the Monad Testnet using the keystore file you created.
+
+```shell
+forge create src/Counter.sol:Counter --rpc-url https://testnet-rpc2.monad.xyz/52227f026fa8fac9e2014c58fbf5643369b3bfc6 --account monad-deployer --broadcast
+```
+
+## Verify Your Contract on Monad Testnet
+
+```shell
+forge verify-contract <contract_address> <contract_name> --chain-id 10143 --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org 
+```
+
 ### Cast
 
 ```shell
@@ -112,12 +83,31 @@ cast <subcommand>
 
 ```shell
 forge --help
-```
-
-```shell
 anvil --help
-```
-
-```shell
 cast --help
 ```
+
+
+## FAQ
+
+### Error: `Error: server returned an error response: error code -32603: Signer had insufficient balance`
+
+This error happens when you don't have enough balance to deploy your contract. You can check your balance with the following command:
+
+```shell
+cast wallet address --account monad-deployer
+```
+
+### I have constructor arguments, how do I deploy my contract?
+
+```shell
+forge create src/Counter.sol:Counter --rpc-url https://testnet-rpc2.monad.xyz/52227f026fa8fac9e2014c58fbf5643369b3bfc6 --account monad-deployer --broadcast --constructor-args <constructor_arguments>
+```
+
+### I have constructor arguments, how do I verify my contract?
+
+```shell
+forge verify-contract <contract_address> <contract_name> --chain-id 10143 --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --constructor-args <abi_encoded_constructor_arguments>
+```
+
+Please refer to the [Foundry Book](https://book.getfoundry.sh/) for more information.
