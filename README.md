@@ -64,7 +64,7 @@ The command above will create a keystore file named `monad-deployer` in the ~/.f
 Then, you can deploy your contract to the Monad Testnet using the keystore file you created.
 
 ```shell
-forge create src/Counter.sol:Counter --rpc-url https://testnet-rpc2.monad.xyz/52227f026fa8fac9e2014c58fbf5643369b3bfc6 --account monad-deployer --broadcast
+forge create src/Counter.sol:Counter --account monad-deployer --broadcast
 ```
 
 ## Verify Your Contract on Monad Testnet
@@ -101,7 +101,7 @@ cast wallet address --account monad-deployer
 ### I have constructor arguments, how do I deploy my contract?
 
 ```shell
-forge create src/Counter.sol:Counter --rpc-url https://testnet-rpc2.monad.xyz/52227f026fa8fac9e2014c58fbf5643369b3bfc6 --account monad-deployer --broadcast --constructor-args <constructor_arguments>
+forge create src/Counter.sol:Counter --account monad-deployer --broadcast --constructor-args <constructor_arguments>
 ```
 
 ### I have constructor arguments, how do I verify my contract?
