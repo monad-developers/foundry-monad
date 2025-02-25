@@ -43,15 +43,14 @@ forge snapshot
 
 ```shell
 anvil
-```
+=======
 
 ### Deploy to Monad Testnet
 
 First, you need to create a keystore file. Do not forget to remember the password! You will need it to deploy your contract.
 
-```shell
+
 cast wallet import monad-deployer --private-key $(cast wallet new | grep 'Private key:' | awk '{print $3}')
-```
 
 After creating the keystore, you can read its address using:
 
