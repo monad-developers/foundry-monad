@@ -1,11 +1,20 @@
-## Monad flavored Foundry
+## Monad-flavored Foundry
+
+> [!NOTE]
+> In this Foundry template, the default chain is `monadTestnet`, If you wish to change it, change the network in `foundry.toml`
+
+<h4 align="center">
+  <a href="https://docs.monad.xyz">Monad Documentation</a> | <a href="https://book.getfoundry.sh/">Foundry Documentation</a> |
+   <a href="https://github.com/monad-developers/foundry-monad/issues">Report Issue</a>
+</h4>
+
 
 **Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
 Foundry consists of:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+-   **Forge**: Ethereum testing framework (like Truffle, Hardhat, and DappTools).
+-   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions, and getting chain data.
 -   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
 -   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
@@ -67,14 +76,19 @@ Then, you can deploy your contract to the Monad Testnet using the keystore file 
 forge create src/Counter.sol:Counter --account monad-deployer --broadcast
 ```
 
-### Verify your contract on Monad Testnet
+### Verify Contract
 
 ```shell
-forge verify-contract <contract_address> <contract_name> --chain-id 10143 --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org 
+forge verify-contract \
+  <contract_address> \
+  src/Counter.sol:Counter \
+  --chain 10143 \
+  --verifier sourcify \
+  --verifier-url https://sourcify-api-monad.blockvision.org
 ```
 
 ### Cast
-
+[Cast reference](https://book.getfoundry.sh/cast/)
 ```shell
 cast <subcommand>
 ```
@@ -98,13 +112,13 @@ This error happens when you don't have enough balance to deploy your contract. Y
 cast wallet address --account monad-deployer
 ```
 
-### I have constructor arguments, how do I deploy my contract?
+### I have constructor arguments, how do I deploy my contract?
 
 ```shell
 forge create src/Counter.sol:Counter --account monad-deployer --broadcast --constructor-args <constructor_arguments>
 ```
 
-### I have constructor arguments, how do I verify my contract?
+### I have constructor arguments, how do I verify my contract?
 
 ```shell
 forge verify-contract <contract_address> <contract_name> --chain-id 10143 --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --constructor-args <abi_encoded_constructor_arguments>
