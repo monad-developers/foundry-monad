@@ -43,14 +43,15 @@ forge snapshot
 
 ```shell
 anvil
-=======
+```
 
 ### Deploy to Monad Testnet
 
 First, you need to create a keystore file. Do not forget to remember the password! You will need it to deploy your contract.
 
-
+```shell
 cast wallet import monad-deployer --private-key $(cast wallet new | grep 'Private key:' | awk '{print $3}')
+```
 
 After creating the keystore, you can read its address using:
 
@@ -58,7 +59,7 @@ After creating the keystore, you can read its address using:
 cast wallet address --account monad-deployer
 ```
 
-The command above will create a keystore file named `monad-deployer` in the ~/.foundry/keystores directory.
+The command above will create a keystore file named `monad-deployer` in the `~/.foundry/keystores` directory.
 
 Then, you can deploy your contract to the Monad Testnet using the keystore file you created.
 
@@ -66,7 +67,7 @@ Then, you can deploy your contract to the Monad Testnet using the keystore file 
 forge create src/Counter.sol:Counter --account monad-deployer --broadcast
 ```
 
-## Verify Your Contract on Monad Testnet
+### Verify your contract on Monad Testnet
 
 ```shell
 forge verify-contract <contract_address> <contract_name> --chain-id 10143 --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org 
