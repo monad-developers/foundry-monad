@@ -1,7 +1,7 @@
 ## Monad-flavored Foundry
 
 > [!NOTE]
-> In this Foundry template, the default chain is `monadTestnet`, If you wish to change it, change the network in `foundry.toml`
+> In this Foundry template, the default chain is `monadTestnet`. If you wish to change it, change the network in `foundry.toml`
 
 <h4 align="center">
   <a href="https://docs.monad.xyz">Monad Documentation</a> | <a href="https://book.getfoundry.sh/">Foundry Documentation</a> |
@@ -16,7 +16,7 @@ Foundry consists of:
 -   **Forge**: Ethereum testing framework (like Truffle, Hardhat, and DappTools).
 -   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions, and getting chain data.
 -   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+-   **Chisel**: Fast, utilitarian, and verbose Solidity REPL.
 
 ## Documentation
 
@@ -115,13 +115,23 @@ cast wallet address --account monad-deployer
 ### I have constructor arguments, how do I deploy my contract?
 
 ```shell
-forge create src/Counter.sol:Counter --account monad-deployer --broadcast --constructor-args <constructor_arguments>
+forge create \
+  src/Counter.sol:Counter \
+  --account monad-deployer \
+  --broadcast \
+  --constructor-args <constructor_arguments>
 ```
 
 ### I have constructor arguments, how do I verify my contract?
 
 ```shell
-forge verify-contract <contract_address> <contract_name> --chain-id 10143 --verifier sourcify --verifier-url https://sourcify-api-monad.blockvision.org --constructor-args <abi_encoded_constructor_arguments>
+forge verify-contract \
+  <contract_address> \
+  src/Counter.sol:Counter \
+  --chain 10143 \
+  --verifier sourcify \
+  --verifier-url https://sourcify-api-monad.blockvision.org \
+  --constructor-args <abi_encoded_constructor_arguments>
 ```
 
 Please refer to the [Foundry Book](https://book.getfoundry.sh/) for more information.
