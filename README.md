@@ -1,3 +1,5 @@
+[![CI](https://github.com/monad-developers/foundry-monad/actions/workflows/test.yml/badge.svg)](https://github.com/monad-developers/foundry-monad/actions/workflows/test.yml)
+
 ## Monad-flavored Foundry
 
 > [!NOTE]
