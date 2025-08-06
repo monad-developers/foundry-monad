@@ -82,7 +82,7 @@ forge create src/Counter.sol:Counter --account monad-deployer --broadcast
 forge verify-contract \
   <contract_address> \
   src/Counter.sol:Counter \
-  --chain 10143 \
+  --chain-id 10143 \
   --verifier sourcify \
   --verifier-url https://sourcify-api-monad.blockvision.org
 ```
@@ -128,7 +128,7 @@ forge create \
 forge verify-contract \
   <contract_address> \
   src/Counter.sol:Counter \
-  --chain 10143 \
+  --chain-id 10143 \
   --verifier sourcify \
   --verifier-url https://sourcify-api-monad.blockvision.org \
   --constructor-args <abi_encoded_constructor_arguments>
