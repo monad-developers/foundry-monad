@@ -192,7 +192,7 @@ if forge verify-contract \
     --watch \
     --etherscan-api-key test \
     --verifier-url https://api.socialscan.io/monad-testnet/v1/explorer/command_api/contract \
-    --verifier etherscan; then
+    --verifier blockscout; then
     SOCIALSCAN_SUCCESS=true
 fi
 
