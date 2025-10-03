@@ -2,6 +2,8 @@
 
 > [!NOTE]
 > In this Foundry template, the default chain is `monadTestnet`. If you wish to change it, change the network in `foundry.toml`
+> Supports BaseTools integration for WalletConnect demos.
+
 
 <h4 align="center">
   <a href="https://docs.monad.xyz">Monad Documentation</a> | <a href="https://book.getfoundry.sh/">Foundry Documentation</a> |
