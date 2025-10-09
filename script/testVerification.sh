@@ -4,9 +4,18 @@
 # This script creates a random variant of a contract, deploys it, and verifies it
 # Usage: bash testVerification.sh
 
-# Hardcoded values
-PRIVATE_KEY="${PRIVATE_KEY:-}"
-ETHERSCAN_API_KEY="REDACTED_API_KEY"
+# Environment variables (set before running)
+if [ -z "$PRIVATE_KEY" ]; then
+    echo "Error: PRIVATE_KEY environment variable not set"
+    echo "Usage: PRIVATE_KEY=your_key ETHERSCAN_API_KEY=your_key bash testVerification.sh"
+    exit 1
+fi
+
+if [ -z "$ETHERSCAN_API_KEY" ]; then
+    echo "Error: ETHERSCAN_API_KEY environment variable not set"
+    echo "Usage: PRIVATE_KEY=your_key ETHERSCAN_API_KEY=your_key bash testVerification.sh"
+    exit 1
+fi
 
 # Default values
 DEFAULT_SOURCE_FILE="src/Counter.sol:Counter"

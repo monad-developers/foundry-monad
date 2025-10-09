@@ -4,9 +4,19 @@
 # This script uses simple custom proxy contracts instead of OpenZeppelin
 # Usage: bash testSimpleProxyVerification.sh
 
-# Hardcoded values
-PRIVATE_KEY="${PRIVATE_KEY:-}"
-ETHERSCAN_API_KEY="REDACTED_API_KEY"
+# Environment variables (set before running)
+if [ -z "$PRIVATE_KEY" ]; then
+    echo "Error: PRIVATE_KEY environment variable not set"
+    echo "Usage: PRIVATE_KEY=your_key ETHERSCAN_API_KEY=your_key bash testSimpleProxyVerification.sh"
+    exit 1
+fi
+
+if [ -z "$ETHERSCAN_API_KEY" ]; then
+    echo "Error: ETHERSCAN_API_KEY environment variable not set"
+    echo "Usage: PRIVATE_KEY=your_key ETHERSCAN_API_KEY=your_key bash testSimpleProxyVerification.sh"
+    exit 1
+fi
+
 DEPLOYER_ADDRESS="0xD7702541b1D17F823F367B1643dc2cC86c4fD68C"
 
 # Generate random suffix for test contracts (macOS compatible)
