@@ -1,7 +1,7 @@
 ## Monad-flavored Foundry
 
 > [!NOTE]
-> In this Foundry template, the default chain is `monadTestnet`. If you wish to change it, change the network in `foundry.toml`
+> In this Foundry template, the default chain is `monadMainnet`. If you wish to change it, change the network in `foundry.toml`
 
 <h4 align="center">
   <a href="https://docs.monad.xyz">Monad Documentation</a> | <a href="https://book.getfoundry.sh/">Foundry Documentation</a> |
@@ -54,7 +54,7 @@ forge snapshot
 anvil
 ```
 
-### Deploy to Monad Testnet
+### Deploy to Monad Mainnet
 
 First, you need to create a keystore file. Do not forget to remember the password! You will need it to deploy your contract.
 
@@ -82,7 +82,7 @@ forge create src/Counter.sol:Counter --account monad-deployer --broadcast
 forge verify-contract \
   <contract_address> \
   src/Counter.sol:Counter \
-  --chain 10143 \
+  --chain 143 \
   --verifier sourcify \
   --verifier-url https://sourcify-api-monad.blockvision.org
 ```
@@ -128,7 +128,7 @@ forge create \
 forge verify-contract \
   <contract_address> \
   src/Counter.sol:Counter \
-  --chain 10143 \
+  --chain 143 \
   --verifier sourcify \
   --verifier-url https://sourcify-api-monad.blockvision.org \
   --constructor-args <abi_encoded_constructor_arguments>
