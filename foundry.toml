@@ -7,7 +7,7 @@ metadata_hash = "none"  # disable ipfs
 use_literal_content = true # use source code
 
 # Monad Configuration
-eth-rpc-url="https://testnet-rpc.monad.xyz"
-chain_id = 10143
+eth-rpc-url="https://rpc.monad.xyz"
+chain_id = 143
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
